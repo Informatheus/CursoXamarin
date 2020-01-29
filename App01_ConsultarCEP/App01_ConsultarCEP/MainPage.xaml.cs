@@ -34,7 +34,6 @@ namespace App01_ConsultarCEP
             Resultado.Text = string.Format("Endereço: {0}, {1} {2}", end.localidade, end.uf, end.logradouro);
 
             }
-
         }
 
         private bool isValidCEP(string cep)
