@@ -26,12 +26,17 @@ namespace App01_ConsultarCEP
         private void BuscarCEP(object sender, EventArgs args)
         {
         
-            string cep = CEP.Text.Trim();
-            Endereco end = ViaCEPServico.BuscarEnderecoViaCEP(cep);
+            string cep = CEP.Text.Trim();            
 
             if (isValidCEP(cep)){
 
-            Resultado.Text = string.Format("Endereço: {0}, {1} {2}", end.localidade, end.uf, end.logradouro);
+            Endereco end = ViaCEPServico.BuscarEnderecoViaCEP(cep);
+
+            if (end != null) { 
+                Resultado.Text = string.Format("Endereço: {0}, {1} {2}", end.localidade, end.uf, end.logradouro);
+            } else {
+                    DisplayAlert("ERRO", "Não existe este CEP", "OK");
+                }   
 
             }
         }
