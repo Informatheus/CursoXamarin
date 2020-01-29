@@ -54,9 +54,6 @@ namespace App01_ConsultarCEP
                 valido = false;
             }
             return valido;
-        }
-        
-
-       
+        }       
     }
 }
