@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace App2_TiposPaginaXF.Paginas.Carousel
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class Introducao : CarouselPage
     {
-        public Page1()
+        public Introducao()
         {
             InitializeComponent();
         }
