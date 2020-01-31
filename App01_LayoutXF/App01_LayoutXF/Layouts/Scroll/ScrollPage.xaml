@@ -4,15 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2_TiposPaginaXF.Paginas.Tabbed.Page3"
-             Title="Aba 3">
-
+             x:Class="App01_LayoutXF.Layouts.Scroll.ScrollPage"
+             Title="ScrollPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Eu sou a aba 3"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="Ir para Master" Clicked="irParaMaster" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

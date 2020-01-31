@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2_TiposPaginaXF.Paginas.Tabbed {
+namespace App2_TiposPaginaXF.Paginas.Master {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page3 : ContentPage {
         public Page3() {
             InitializeComponent();
-        }
-
-        private void irParaMaster(object sender, EventArgs args) {
-            //Navigation.PushAsync(new Master.Master());
-            App.Current.MainPage = new Master.Master();
         }
     }
 }
