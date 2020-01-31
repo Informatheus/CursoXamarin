@@ -9,8 +9,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Eu sou a segunda ContentPage"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Button Text="Ir para Tabbed" Clicked="OnButtonClicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

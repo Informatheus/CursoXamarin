@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2_TiposPaginaXF.Paginas.Tabbed.Abas"
+             xmlns:nav="clr-namespace:App2_TiposPaginaXF.Paginas.Tabbed"
+             Title="Tabbed Page">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Pesquisa" Icon="xamarin.png"/>
+        <ToolbarItem Text="Detalhes" Icon="Page.png"/>
+        <ToolbarItem Text="Ordenar" Icon="play.png"/>
+
+    </ContentPage.ToolbarItems>
+
+    <nav:Page1/>
+    <nav:Page2/>
+    <nav:Page3/>
+
+    <!--<NavigationPage>        
+
+        <x:Arguments>
+
+            <nav:Page1/>
+
+        </x:Arguments>
+
+    </NavigationPage>-->
+
+    <!--<NavigationPage>
+
+        <x:Arguments>
+
+            <nav:Page2/>
+
+        </x:Arguments>
+
+    </NavigationPage>
+    
+    SE FIZER DESSA FORMA (INSERINDO NAVIGATION NO XAML EM VEZ DE NO CODEBEHIND COM NEW NAVIGATION()),
+    A NAVIGATION FICARA DENTRO DAS ABAS E NÃO O CONTRÁRIO, FAZENDO COM QUE AO TROCAR DE ABA
+    O EFEITO SEJA DE UMA TROCA DE TOOLBAR, O QUE NÃO É O DESEJADO.
+    
+    -->
+
+</TabbedPage>
+

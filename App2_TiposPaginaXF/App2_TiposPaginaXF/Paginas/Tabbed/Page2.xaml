@@ -4,14 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2_TiposPaginaXF.Paginas.Carousel.Page3"
-             BackgroundColor="LightSkyBlue">
+             x:Class="App2_TiposPaginaXF.Paginas.Tabbed.Page2"
+             Title="Aba 2">
+    
     <ContentPage.Content>
-        <StackLayout VerticalOptions="CenterAndExpand"  >
-            <ImageButton Source="play.png"
+        <StackLayout>
+            <Label Text="Eu sou a aba 2"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                         Clicked="MudarPagina"/>
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
