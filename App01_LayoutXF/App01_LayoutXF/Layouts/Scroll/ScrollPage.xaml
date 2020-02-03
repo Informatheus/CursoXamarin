@@ -7,10 +7,10 @@
              x:Class="App01_LayoutXF.Layouts.Scroll.ScrollPage"
              Title="ScrollPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView Orientation="Both">
+            <StackLayout WidthRequest="1000" HeightRequest="1000" BackgroundColor="#CCCCCC" Margin="15">
+                <Label Text="Welcome to Xamarin.Forms!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightBlue"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
