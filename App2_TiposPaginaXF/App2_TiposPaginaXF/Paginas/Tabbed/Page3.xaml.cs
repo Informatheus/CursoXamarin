@@ -15,8 +15,8 @@ namespace App2_TiposPaginaXF.Paginas.Tabbed {
         }
 
         private void irParaMaster(object sender, EventArgs args) {
-            //Navigation.PushAsync(new Master.Master());
-            App.Current.MainPage = new Master.Master();
+            Navigation.PushAsync(new Master.Master());
+            //App.Current.MainPage = new NavigationPage(new Master.Master());
         }
     }
 }
