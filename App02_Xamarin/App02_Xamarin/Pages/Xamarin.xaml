@@ -5,12 +5,51 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App02_Xamarin.Pages.Xamarin"
+             xmlns:res="clr-namespace:App02_Xamarin."
              Title="Sobre">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="0">
+
+            <StackLayout BackgroundColor="{StaticResource appYellow}" Padding="30">
+
+                <Image Source="Logo.png" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            </StackLayout>
+
+            <StackLayout HeightRequest="100" BackgroundColor="{StaticResource appBlue}">
+
+                <Label Text="Xamarin" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White" FontSize="48" />
+
+            </StackLayout>
+
+            <FlexLayout AlignItems="Center" JustifyContent="Center" Padding="30">
+
+                <RelativeLayout Margin="10, 0">
+
+                    <BoxView BackgroundColor="{StaticResource appBlue}" WidthRequest="30" HeightRequest="30" x:Name="box1" />
+
+                    <BoxView BackgroundColor="#25567e" WidthRequest="30" HeightRequest="30" x:Name="box2"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box1, Factor=1, Property=X, Constant=10}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box1, Factor=1, Property=Y, Constant=10}"/>
+                    
+                    <BoxView BackgroundColor="#4e93cb" WidthRequest="30" HeightRequest="30"
+                             RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box2, Factor=1, Property=X, Constant=10}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, ElementName=box2, Factor=1, Property=Y, Constant=10}"/>
+
+                </RelativeLayout>
+
+                <Label Text="Empresa" HorizontalOptions="CenterAndExpand" VerticalOptions=" Center" TextColor="Black" FontSize="48" />
+
+            </FlexLayout>
+
+            <StackLayout Padding="30">
+
+                <Label Text="bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+                       bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+                       bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla "/>
+
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

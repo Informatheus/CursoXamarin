@@ -24,15 +24,15 @@
                 </StackLayout>
 
                 <!--Stack de fundo azul (sem cor, a content é azul)-->
-                <StackLayout Spacing="50">
+                <StackLayout Spacing="20">
                     <Button Text="Miguel de Icaza" BackgroundColor="Transparent" Clicked="GoPerfil"
-                        FontSize="28" TextColor="White"/>
+                        FontSize="Subtitle" TextColor="White"/>
                     <Button Text="Joseph Hill" BackgroundColor="#Transparent" 
-                        FontSize="28" TextColor="White"/>
+                        FontSize="Subtitle" TextColor="White"/>
                     <Button Text="Nat Friedman" BackgroundColor="#Transparent" 
-                        FontSize="28" TextColor="White"/>
+                        FontSize="Subtitle" TextColor="White"/>
                     <Button Text="Sobre a Xamarin" BackgroundColor="#Transparent" Clicked="GoXamarin" 
-                        FontSize="28" TextColor="White"/>
+                        FontSize="Subtitle" TextColor="White"/>
 
                 </StackLayout>  
                 

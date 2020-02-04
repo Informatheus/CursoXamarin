@@ -7,10 +7,53 @@
              x:Class="App02_Xamarin.Pages.Perfil1"
              Title="Perfil">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Perfil!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="0">
+            
+            <RelativeLayout VerticalOptions="Start" HeightRequest="300">
+                <Image Source="Fundo.png" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" Aspect="Fill" />
+                <Image Source="Perfil.png" WidthRequest="120" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=.5, Constant=-60}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=.2}" x:Name="Perfil"/>
+                
+                <FlexLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView, Property=Y, Factor=1, Constant=170, ElementName=Perfil }"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                            HeightRequest="50" JustifyContent="Center">
+
+                    <Label Text="Miguel de Icaza" FontAttributes="Bold"/>
+
+                </FlexLayout>
+                
+                
+                
+
+            </RelativeLayout>
+            
+            <Grid HeightRequest="120" BackgroundColor="#0d1f2d">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <StackLayout Spacing="0" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="18" TextColor="White" FontSize="32" />
+                    <Label Text="Anos" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" />                    
+                </StackLayout>
+
+                <StackLayout Spacing="0" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="10/01/2000" TextColor="White" FontSize="32" />
+                    <Label Text="Nasceu" TextColor="White" FontSize="12" HorizontalTextAlignment="Center" />
+                </StackLayout>
+
+            </Grid>
+            
+            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="30">
+                <Label Text="Miguel de Icaza nasceu na Cidade do México e estudou na Universidade Nacional Autônoma do México UNAM. Ele começou a escrever software em 1992..."/>
+
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
