@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App01_ControleXF.Controles.ProgressBarPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+
+            <Label x:Name="Label1"/>
+            <ProgressBar x:Name="Bar1" Progress="0" />
+            <Label x:Name="Label2"/>
+            <ProgressBar x:Name="Bar2" Progress="0" />
+            <Label x:Name="Label3"/>
+            <ProgressBar x:Name="Bar3" Progress="0" />
+            <Label x:Name="Label4"/>
+            <ProgressBar x:Name="Bar4" Progress="0" />
+            <Label x:Name="Label5"/>
+            <ProgressBar x:Name="Bar5" Progress="0" />
+            <Label x:Name="Label6"/>
+            <ProgressBar x:Name="Bar6" Progress="0" />
+            <Label x:Name="Label7"/>
+            <ProgressBar x:Name="Bar7" Progress="0" />
+            <Label x:Name="Label8"/>
+            <ProgressBar x:Name="Bar8" Progress="0" />
+            <Label x:Name="Label9"/>
+            <ProgressBar x:Name="Bar9" Progress="0" />
+            <Label x:Name="Label10"/>
+            <ProgressBar x:Name="Bar10" Progress="0" />
+
+            <Button Text="Modificar Barras" Clicked="Modificar"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
