@@ -19,7 +19,7 @@
                 HorizontalOptions="CenterAndExpand" Aspect="AspectFill" BackgroundColor="Transparent">
 
                 <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup>
+                    <VisualStateGroup x:Name="button1">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
                                 <Setter Property="Scale"
@@ -37,14 +37,14 @@
 
             </ImageButton>
 
-            <!--BOTÃO COM IMAGEM E TROCA DE IMAGEM AO CLICAR-->
-            <ImageButton HeightRequest="100" WidthRequest="100"
-                          VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" Aspect="AspectFill"
+            <!--BOTÃO COM IMAGEM E TROCA DE IMAGEM AO CLICAR-->            
+            <ImageButton HeightRequest="200" WidthRequest="200"
+                         VerticalOptions="CenterAndExpand" 
+                         HorizontalOptions="CenterAndExpand"
                          BackgroundColor="Transparent">
 
                 <VisualStateManager.VisualStateGroups>
-                    <VisualStateGroup x:Name="Button">
+                    <VisualStateGroup x:Name="button">
                         <VisualState x:Name="Normal">
                             <VisualState.Setters>
                                 <Setter Property="Source" Value="button.png" />
@@ -56,6 +56,7 @@
                                 <Setter Property="Source" Value="button2.png" />
                             </VisualState.Setters>
                         </VisualState>
+
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
 

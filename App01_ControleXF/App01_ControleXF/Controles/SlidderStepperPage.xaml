@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App01_ControleXF.Controles.SlidderStepperPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider x:Name="Slider"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="20"
+                    BackgroundColor="Blue"
+                    ValueChanged="Slider_ValueChanged"
+                    WidthRequest="200"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="SliderResult"/>
+
+
+            <Stepper
+                Minimum="0"
+                Maximum="10"
+                Value="5"
+                ValueChanged="Stepper_ValueChanged"
+                Increment="1"
+                />
+
+            <Label x:Name="StepperResult"/>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

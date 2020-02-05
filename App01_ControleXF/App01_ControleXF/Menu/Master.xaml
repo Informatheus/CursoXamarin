@@ -6,12 +6,19 @@
     <MasterDetailPage.Master>
         
         <ContentPage Title="Teste">
-            <StackLayout Spacing="10" BackgroundColor="AliceBlue">
+            <StackLayout BackgroundColor="AliceBlue">
                 <Button Text="Activity Indicator" Clicked="GoToActivityIndicator"/>
                 <Button Text="ProgressBar" Clicked="GoToProgressBar"/>
                 <Button Text="BoxView" Clicked="GoToBoxView"/>
                 <Button Text="Label" Clicked="GoToLabel"/>
                 <Button Text="Button" Clicked="GoToButton"/>
+                <Button Text="Entry/Editor" Clicked="GoToEntryEditor"/>
+                <Button Text="DatePicker" Clicked="GoToDatePicker"/>
+                <Button Text="TimePicker" Clicked="GoToTimePicker"/>
+                <Button Text="Picker" Clicked="GoToPicker"/>
+                <Button Text="SearchBar" Clicked="GoToSearchBar"/>
+                <Button Text="Slider/Stepper" Clicked="GoToSliderStepper"/>
+                <Button Text="Switch" Clicked="GoToSwitch"/>
             </StackLayout>
         </ContentPage>
 

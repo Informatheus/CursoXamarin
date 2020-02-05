@@ -138,4 +138,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\button2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\button3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\button4.png" />
+  </ItemGroup>
 </Project>

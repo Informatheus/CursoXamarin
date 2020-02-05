@@ -133,6 +133,8 @@
     <Content Include="button.jpg" />
     <Content Include="button.png" />
     <Content Include="button2.png" />
+    <Content Include="button3.png" />
+    <Content Include="button4.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
