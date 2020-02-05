@@ -33,6 +33,29 @@
 
             </ListView>
 
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Black"/>
+
+            <ListView x:Name="ListViewPessoas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <StackLayout Margin="5" Orientation="Horizontal">
+                                <Label Text="{Binding Nome}"/>
+                                <Label Text=" - "/>
+                                <Label Text="{Binding Idade}"/>
+                            </StackLayout>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage> 

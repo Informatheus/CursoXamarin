@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App01_ControleXF.Controles.TableViewPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <TableView Intent="Settings"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <TableRoot>
+                    <TableSection Title="Backup">
+                        <SwitchCell Text="Backup Imagens" On="False"/>
+                        <SwitchCell Text="Backup Chat" On="False"/>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Backup Geral" />
+                                <Slider Minimum="0" Maximum="70" HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+
+                    <TableSection Title="Segurança ">
+
+                    </TableSection>
+
+
+                </TableRoot>
+
+            </TableView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

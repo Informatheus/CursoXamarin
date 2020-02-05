@@ -81,6 +81,18 @@ namespace App01_ControleXF.Menu {
         private void GoToListView(object sender, EventArgs args) {
             Detail = new NavigationPage(new Controles.ListViewPage());
             IsPresented = false;
+
+        }
+
+        private void GoToTableView(object sender, EventArgs args) {
+            Detail = new NavigationPage(new Controles.TableViewPage());
+            IsPresented = false;
+        }
+
+        private void GoToWebView(object sender, EventArgs args) {
+            Detail = new NavigationPage(new Controles.WebViewPage());
+            IsPresented = false;
         }
     }
 }
+   

@@ -21,6 +21,8 @@
                 <Button Text="Switch" Clicked="GoToSwitch"/>
                 <Button Text="Image" Clicked="GoToImage"/>
                 <Button Text="ListView" Clicked="GoToListView"/>
+                <Button Text="TableView" Clicked="GoToTableView"/>
+                <Button Text="WebView" Clicked="GoToWebView"/>
             </StackLayout>
         </ContentPage>
 
