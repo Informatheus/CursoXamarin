@@ -73,5 +73,14 @@ namespace App01_ControleXF.Menu {
             Detail = new NavigationPage(new Controles.SwitchPage());
             IsPresented = false;
         }
+
+        private void GoToImage(object sender, EventArgs args) {
+            Detail = new NavigationPage(new Controles.ImagePage());
+            IsPresented = false;
+        }
+        private void GoToListView(object sender, EventArgs args) {
+            Detail = new NavigationPage(new Controles.ListViewPage());
+            IsPresented = false;
+        }
     }
 }

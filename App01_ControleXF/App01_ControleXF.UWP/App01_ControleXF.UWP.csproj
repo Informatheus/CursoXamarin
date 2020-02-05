@@ -136,6 +136,7 @@
     <Content Include="button3.png" />
     <Content Include="button4.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Imagens\usb.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

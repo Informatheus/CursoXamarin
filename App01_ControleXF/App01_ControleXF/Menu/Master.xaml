@@ -19,6 +19,8 @@
                 <Button Text="SearchBar" Clicked="GoToSearchBar"/>
                 <Button Text="Slider/Stepper" Clicked="GoToSliderStepper"/>
                 <Button Text="Switch" Clicked="GoToSwitch"/>
+                <Button Text="Image" Clicked="GoToImage"/>
+                <Button Text="ListView" Clicked="GoToListView"/>
             </StackLayout>
         </ContentPage>
 
