@@ -7,7 +7,7 @@ namespace App2_Tarefa {
         public App() {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new Telas.Cadastro());
+            MainPage = new NavigationPage( new Telas.Inicio());
         }
 
         protected override void OnStart() {
