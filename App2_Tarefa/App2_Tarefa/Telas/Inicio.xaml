@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2_Tarefa.Telas.Inicio">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            
+            <StackLayout BackgroundColor="Blue" HeightRequest="250">
+                <Label Text="Meu Dia" TextColor="White" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="Quinta, 22/02" TextColor="White" VerticalOptions="End" HorizontalOptions="Start"/>
+            </StackLayout>
+
+            <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10">
+                <StackLayout Orientation="Horizontal"  Spacing="15">
+                    <Image VerticalOptions="Center" />
+                    <Label Text="Task 1" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                    <Image VerticalOptions="Center" />
+                    <Image VerticalOptions="Center" />
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"   Spacing="15">
+                    <Image VerticalOptions="Center" />
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+                        <Label Text="Task 1"/>
+                        <Label Text="Finalizado em 20/01/2018 - 17:00" TextColor="LightGray" FontSize="Small"/>
+                    </StackLayout>
+                    <Image VerticalOptions="Center" />
+                    <Image VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+            
+            <Button Text="Adicionar" HorizontalOptions="Center"
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
