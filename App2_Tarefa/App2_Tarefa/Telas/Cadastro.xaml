@@ -14,29 +14,57 @@
             <StackLayout x:Name="SLPrioridades" Padding="10">
 
                     <!--Uma linha de prioridade-->
-                <StackLayout>
-                    <Image />
+                <StackLayout Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p4.png"/>
+                                <On Platform="UWP" Value="Imagens/p4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <Label Text="Urgente e importante" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
-                <StackLayout>
-                    <Image />
+                <StackLayout Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p3.png"/>
+                                <On Platform="UWP" Value="Imagens/p3.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <Label Text="Urgente e não importante" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
-                <StackLayout>
-                    <Image />
+                <StackLayout Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p2.png"/>
+                                <On Platform="UWP" Value="Imagens/p2.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <Label Text="Não urgente e importante" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
-                <StackLayout>
-                    <Image />
+                <StackLayout Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p1.png"/>
+                                <On Platform="UWP" Value="Imagens/p1.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
                     <Label Text="Não urgente e não importante" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
