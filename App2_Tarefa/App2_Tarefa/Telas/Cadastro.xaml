@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2_Tarefa.Telas.Cadastro">
+             x:Class="App2_Tarefa.Telas.Cadastro"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
             <Label Text="Nome" FontAttributes="Bold" />
             <Entry x:Name="TxtNome" />
             <Label Text="Prioridade" FontAttributes="Bold"/>
@@ -15,6 +16,9 @@
 
                     <!--Uma linha de prioridade-->
                 <StackLayout Orientation="Horizontal" Spacing="10" Padding="5">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
@@ -23,12 +27,15 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Urgente e importante" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Urgente e importante" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
                 <StackLayout Orientation="Horizontal" Spacing="10" Padding="5">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
@@ -37,12 +44,15 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Urgente e não importante" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Urgente e não importante" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
                 <StackLayout Orientation="Horizontal" Spacing="10" Padding="5">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
@@ -51,12 +61,15 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Não urgente e importante" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Não urgente e importante" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
 
                 <!--Uma linha de prioridade-->
                 <StackLayout Orientation="Horizontal" Spacing="10" Padding="5">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction"/>
+                    </StackLayout.GestureRecognizers>
                     <Image>
                         <Image.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
@@ -65,11 +78,11 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Label Text="Não urgente e não importante" HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Não urgente e não importante" TextColor="Gray" HorizontalOptions="FillAndExpand"/>
                     <Image />
                 </StackLayout>
         </StackLayout>
-            <Button Text="OK" HorizontalOptions="Center" BackgroundColor="Blue" TextColor="White"/>
+            <Button Clicked="Button_Clicked" Text="OK" HorizontalOptions="Center" BackgroundColor="Blue" TextColor="White"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

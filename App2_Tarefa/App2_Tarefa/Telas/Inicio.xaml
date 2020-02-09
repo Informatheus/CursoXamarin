@@ -4,19 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App2_Tarefa.Telas.Inicio">
+             x:Class="App2_Tarefa.Telas.Inicio"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             
             
             <StackLayout BackgroundColor="Blue" HeightRequest="250" Padding="15">
                 <Label Text="Meu Dia" TextColor="White" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                <Label Text="Quinta, 22/02" TextColor="White" VerticalOptions="End" HorizontalOptions="Start"/>
+                <Label x:Name="Datahoje" TextColor="White" VerticalOptions="End" HorizontalOptions="Start"/>
             </StackLayout>
 
             <StackLayout x:Name="SLTarefas" Padding="10" Spacing="10">
                 
-                <!--Primeira Tarefa-->
+                <!--Primeira Tarefa--><!--
                 <StackLayout Orientation="Horizontal"  Spacing="15">
                     <Image>
                         <Image.Source>
@@ -35,11 +36,10 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                    <Image VerticalOptions="Center" />
 
                 </StackLayout>
                 
-                <!--Segunda tarefa-->
+                --><!--Segunda tarefa--><!--
                 <StackLayout Orientation="Horizontal" Spacing="15">
                     <Image>
                         <Image.Source>
@@ -72,7 +72,7 @@
                             </OnPlatform>
                         </Image.Source>
                     </Image>
-                </StackLayout>
+                </StackLayout> -->
             </StackLayout>
 
             <ImageButton HorizontalOptions="Center" Clicked="ButtonGoCadastro">
