@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1_Estilo.Pagina.DynamicStylePage">
+
+    <ContentPage.Resources>
+        <Color x:Key="LblColor">Red</Color>
+        
+        <Style x:Key="LblStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="BackgroundColor" Value="Black"/>
+        </Style>
+        <Style x:Key="LblStyleInverted" TargetType="Label">
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+        
+
+
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <Label Text="Welcome to Xamarin.Forms!" TextColor="{StaticResource LblColor}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <Label Text="Welcome to Xamarin.Forms!" TextColor="{DynamicResource LblColor}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Label Estática" Style="{StaticResource LblStyle}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Label Dinâmica" Style="{DynamicResource LblStyle}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Button Text="Mudar a cor" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

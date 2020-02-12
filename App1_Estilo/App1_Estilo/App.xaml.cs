@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1_Estilo.Menu;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +8,7 @@ namespace App1_Estilo {
         public App() {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Master();
         }
 
         protected override void OnStart() {

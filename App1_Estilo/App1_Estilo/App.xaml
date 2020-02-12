@@ -6,6 +6,10 @@
              mc:Ignorable="d"
              x:Class="App1_Estilo.App">
     <Application.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="BackgroundColor" Value="Yellow"/>
+        </Style>
 
     </Application.Resources>
 </Application>
