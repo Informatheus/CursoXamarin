@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App2_Cinemix.App">
+    <Application.Resources>
+        <Color x:key="CorFundo">#6a34b0</Color>
+        <Color x:key="CorClara">#947ac4</Color>
+        <FontFamily x:key="Fonte">Segoe UI</FontFamily>
+
+    </Application.Resources>
+</Application>
