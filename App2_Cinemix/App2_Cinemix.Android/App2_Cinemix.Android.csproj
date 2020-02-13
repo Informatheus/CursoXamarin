@@ -84,7 +84,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\FundoValor.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App2_Cinemix\App2_Cinemix.csproj">
       <Project>{C45376CF-1063-453E-B1FC-04A8BBAA9BCE}</Project>

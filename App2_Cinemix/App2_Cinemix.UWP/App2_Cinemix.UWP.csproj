@@ -131,6 +131,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Fundo.png" />
+    <Content Include="FundoValor.png" />
     <Content Include="Poster.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
