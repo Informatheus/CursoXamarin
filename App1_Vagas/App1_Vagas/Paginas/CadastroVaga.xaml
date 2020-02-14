@@ -6,38 +6,42 @@
              mc:Ignorable="d"
              x:Class="App1_Vagas.Paginas.CadastroVaga">
     <ContentPage.Content>
-        <StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Vagas" FontSize="24" TextColor="Orange" VerticalOptions="Center"/>
-                <Label Text="encontre seu emprego aqui" FontSize="12" TextColor="Orange" VerticalOptions="End"/>
+        <ScrollView>
+            <StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <Label Text="Vagas" FontSize="24" TextColor="OrangeRed" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                    <Label Text="encontre seu emprego aqui" FontSize="12" TextColor="OrangeRed" VerticalOptions="End" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+
+                <Entry x:Name="NomeVaga" Placeholder="Vaga / Cargo"/>
+
+                <Entry x:Name="Empresa" Placeholder="Empresa"/>
+
+                <Entry x:Name="Cidade" Placeholder="Cidade"/>
+
+                <Entry x:Name="Quantidade" Placeholder="Quantidade"/>
+
+                <Entry x:Name="Salario" Placeholder="Salário"/>
+
+                <Editor x:Name="Descricao" Placeholder="Descrição do Cargo" HeightRequest="150"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Tipo de Contratação" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="CLT"/>
+                    <Switch x:Name="TipoContrato" />
+                    <Label Text="PJ"/>
+                </StackLayout>
+
+                <Entry x:Name="Telefone" Placeholder="Telefone"/>
+
+                <Entry x:Name="Email" Placeholder="E-mail"/>
+
+                <Button x:Name="BtnSalvar" Text="Salvar" TextColor="White" Clicked="BtnSalvar_Clicked"
+                    BackgroundColor="OrangeRed" HorizontalOptions="Center" Margin="10"/>
+
             </StackLayout>
-
-            <Entry Placeholder="Vaga / Cargo"/>
-
-            <Entry Placeholder="Quantidade"/>
-
-            <Entry Placeholder="Cidade"/>
-
-            <Entry Placeholder="Empresa"/>
-            
-            <Entry Placeholder="Salário"/>
-
-            <Editor Placeholder="Descrição do Cargo" HeightRequest="150"/>
-
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Tipo de Contratação" HorizontalOptions="StartAndExpand"/>
-                <Label Text="CLT"/>
-                <Switch />
-                <Label Text="PJ"/>
-            </StackLayout>
-
-            <Entry Placeholder="Telefone"/>
-
-            <Entry Placeholder="E-mail"/>
-
-            <Button Text="Salvar" TextColor="White" BackgroundColor="Orange" HorizontalOptions="End" VerticalOptions="End"/>
-
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
