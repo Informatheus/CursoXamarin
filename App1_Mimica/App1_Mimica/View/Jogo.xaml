@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1_Mimica.View.Jogo">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="NomeGrupo" Text="Grupo 1" />
+            <Frame BackgroundColor="AliceBlue" HasShadow="True" CornerRadius="10">
+                <StackLayout Spacing="30">
+                    <Label x:Name="PalavraPontuacao" Text="Palavra - Pontuação 5" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label x:Name="Palavra" Text="**********" FontSize="24" FontAttributes="Bold"/>
+                    <Button Clicked="Mostrar_Button_Clicked" Text="Mostrar" HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+            <StackLayout x:Name="StackContagem" IsVisible="False">
+                <Label x:Name="Contagem" Text="120" FontSize="48" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,50,0,0"/>
+                <Label Text="seg" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Horizontal" Margin="20,50,20,0">
+                    <Button Clicked="Acertou_Button_Clicked" Text="Acertou" TextColor="White" BackgroundColor="Green" HorizontalOptions="Start"/>
+                    <Button Clicked="Errou_Button_Clicked" Text="Errou" TextColor="White" BackgroundColor="Red" HorizontalOptions="End"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

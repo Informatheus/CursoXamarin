@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1_Mimica.View.Inicio">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nome Grupo 1" FontAttributes="Bold"/>
+            <Entry x:Name="NomeGrupo1" Placeholder="(Opcional)" Margin="0,0,0,20"/>
+
+            <Label Text="Nome Grupo 2" FontAttributes="Bold"/>
+            <Entry x:Name="NomeGrupo2" Placeholder="(Opcional)" Margin="0,0,0,20"/>
+
+            <Label Text="Nível" FontAttributes="Bold"/>
+            <Picker x:Name="Nível" Margin="0,0,0,20">
+                <Picker.Items>
+                    <x:String>Aleatório</x:String>
+                    <x:String>Fácil</x:String>
+                    <x:String>Médio</x:String>
+                    <x:String>Difícil</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Tempo de cada palavra (seg)" FontAttributes="Bold"/>
+            <Entry x:Name="TempoPalavra" Margin="0,0,0,20" Text="120"/>
+
+            <Label Text="Rodadas" FontAttributes="Bold"/>
+            <Entry x:Name="Rodadas" Margin="0,0,0,20" Text="7"/>
+
+            <Button Text="Iniciar" Clicked="Button_Clicked" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

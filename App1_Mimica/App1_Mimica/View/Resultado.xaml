@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App1_Mimica.View.Resultado">
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label x:Name="NomeGrupo1" Text="Grupo 1" FontAttributes="Bold" />
+                <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       HasShadow="True" CornerRadius="10" BackgroundColor="LightGray">
+                    <Label x:Name="Pontuacao1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label x:Name="NomeGrupo2" Text="Grupo 2" FontAttributes="Bold" />
+                <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                       HasShadow="True" CornerRadius="10" BackgroundColor="LightGray">
+                    <Label x:Name="Pontuacao2" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+
+            <Button Text="Jogar outra vez" HorizontalOptions="Center"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
