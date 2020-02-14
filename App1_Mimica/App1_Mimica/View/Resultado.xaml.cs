@@ -13,5 +13,9 @@ namespace App1_Mimica.View {
         public Resultado() {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e) {
+
+        }
     }
 }
