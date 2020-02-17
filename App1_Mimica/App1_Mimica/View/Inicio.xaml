@@ -15,7 +15,7 @@
             <Entry x:Name="NomeGrupo2" Placeholder="(Opcional)" Text="{Binding  NovoJogo.Grupo2.Nome}" Margin="0,0,0,20"/>
 
             <Label Text="Nível" FontAttributes="Bold"/>
-            <Picker x:Name="Nível" Margin="0,0,0,20" SelectedItem="{Binding NovoJogo.Nivel}" SelectedIndex="{Binding NovoJogo.NivelNumerico}">
+            <Picker x:Name="Nível" SelectedItem="{Binding NovoJogo.Nivel}" SelectedIndex="{Binding NovoJogo.NivelNumerico}" Margin="0,0,0,20">
                 <Picker.Items>
                     <x:String>Aleatório</x:String>
                     <x:String>Fácil</x:String>
@@ -25,10 +25,10 @@
             </Picker>
 
             <Label Text="Tempo de cada palavra (seg)" FontAttributes="Bold"/>
-            <Entry Text="{Binding NovoJogo.TempoPalavra}" Margin="0,0,0,20"/>
+            <Entry Text="{Binding NovoJogo.TempoPalavra}" Keyboard="Numeric" Margin="0,0,0,20"/>
 
             <Label Text="Rodadas" FontAttributes="Bold"/>
-            <Entry Text="{Binding NovoJogo.Rodadas}" Margin="0,0,0,20"/>
+            <Entry Text="{Binding NovoJogo.Rodadas}" Keyboard="Numeric" Margin="0,0,0,20"/>
 
             <Button Text="Iniciar" Command="{Binding CommandIniciar}" HorizontalOptions="Center"/>
                 

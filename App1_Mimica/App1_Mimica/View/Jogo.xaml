@@ -13,7 +13,7 @@
                 <Label Text="{Binding Path=RodadaAtual, StringFormat='Rodada {0}'}" HorizontalOptions="EndAndExpand" FontSize="30" FontAttributes="Bold" />
             </StackLayout>
 
-            <Frame BackgroundColor="LightBlue" HasShadow="True" CornerRadius="10" VerticalOptions="FillAndExpand">
+            <Frame HasShadow="True" CornerRadius="10" VerticalOptions="FillAndExpand">
                 <StackLayout Spacing="30" VerticalOptions="CenterAndExpand">
                     <Label x:Name="PalavraPontuacao" Text="{Binding Path=PalavraPontuacao, StringFormat='A palavra que vale {0} pontos é:'}" FontAttributes="Bold" HorizontalOptions="Center"/>
                     <Label x:Name="Palavra" Text="{Binding Palavra}" FontSize="48" FontAttributes="Bold" HorizontalOptions="Center"/>
