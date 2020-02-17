@@ -12,10 +12,9 @@ namespace App1_Mimica.View {
     public partial class Resultado : ContentPage {
         public Resultado() {
             InitializeComponent();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e) {
+            BindingContext = new ViewModel.ResultadoViewModel();
 
         }
+
     }
 }

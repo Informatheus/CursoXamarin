@@ -4,18 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_Mimica.View.Inicio">
+             x:Class="App1_Mimica.View.Inicio"
+             Padding="10">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nome Grupo 1" FontAttributes="Bold"/>
-            <Entry x:Name="NomeGrupo1" Placeholder="(Opcional)" Text="{Binding NomeGrupo1}" Margin="0,0,0,20"/>
-            <Label Text="{Binding NomeGrupo1}"/>
+            <Entry x:Name="NomeGrupo1" Placeholder="(Opcional)" Text="{Binding  NovoJogo.Grupo1.Nome}" Margin="0,0,0,20"/>
 
             <Label Text="Nome Grupo 2" FontAttributes="Bold"/>
-            <Entry x:Name="NomeGrupo2" Placeholder="(Opcional)" Margin="0,0,0,20"/>
+            <Entry x:Name="NomeGrupo2" Placeholder="(Opcional)" Text="{Binding  NovoJogo.Grupo2.Nome}" Margin="0,0,0,20"/>
 
             <Label Text="Nível" FontAttributes="Bold"/>
-            <Picker x:Name="Nível" Margin="0,0,0,20">
+            <Picker x:Name="Nível" Margin="0,0,0,20" SelectedItem="{Binding NovoJogo.Nivel}" SelectedIndex="{Binding NovoJogo.NivelNumerico}">
                 <Picker.Items>
                     <x:String>Aleatório</x:String>
                     <x:String>Fácil</x:String>
@@ -25,12 +25,13 @@
             </Picker>
 
             <Label Text="Tempo de cada palavra (seg)" FontAttributes="Bold"/>
-            <Entry x:Name="TempoPalavra" Margin="0,0,0,20" Text="120"/>
+            <Entry Text="{Binding NovoJogo.TempoPalavra}" Margin="0,0,0,20"/>
 
             <Label Text="Rodadas" FontAttributes="Bold"/>
-            <Entry x:Name="Rodadas" Margin="0,0,0,20" Text="7"/>
+            <Entry Text="{Binding NovoJogo.Rodadas}" Margin="0,0,0,20"/>
 
-            <Button Text="Iniciar" Clicked="Button_Clicked" HorizontalOptions="Center"/>
+            <Button Text="Iniciar" Command="{Binding CommandIniciar}" HorizontalOptions="Center"/>
+                
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

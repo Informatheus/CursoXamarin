@@ -4,27 +4,28 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_Mimica.View.Resultado">
+             x:Class="App1_Mimica.View.Resultado"
+             Padding="10">
     <ContentPage.Content>
         <StackLayout Spacing="20">
             
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label x:Name="NomeGrupo1" Text="Grupo 1" FontAttributes="Bold" />
+                <Label Text="{Binding Jogo.Grupo1.Nome}" FontAttributes="Bold" />
                 <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                       HasShadow="True" CornerRadius="10" BackgroundColor="LightGray">
-                    <Label x:Name="Pontuacao1" Text="30 pontos" FontSize="64" HorizontalOptions="Center" VerticalOptions="Center"/>
+                       HasShadow="True" CornerRadius="10" BackgroundColor="LightBlue">
+                    <Label x:Name="Pontuacao1" Text="{Binding StringFormat='{0} pontos.', Path=Jogo.Grupo1.Pontuacao}" FontSize="64" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
             </StackLayout>
 
             <StackLayout VerticalOptions="FillAndExpand">
-                <Label x:Name="NomeGrupo2" Text="Grupo 2" FontAttributes="Bold" />
+                <Label Text="{Binding Jogo.Grupo2.Nome}" FontAttributes="Bold" />
                 <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-                       HasShadow="True" CornerRadius="10" BackgroundColor="LightGray">
-                    <Label x:Name="Pontuacao2" Text="120 pontos" FontSize="64" HorizontalOptions="Center" VerticalOptions="Center"/>
+                       HasShadow="True" CornerRadius="10" BackgroundColor="LightBlue">
+                    <Label x:Name="Pontuacao2" Text="{Binding StringFormat='{0} pontos.', Path=Jogo.Grupo2.Pontuacao}" FontSize="64" HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Frame>
             </StackLayout>
 
-            <Button Clicked="Button_Clicked" Text="Jogar outra vez" HorizontalOptions="Center"/>
+            <Button Command="{Binding BtnNovoJogo}" Text="Jogar outra vez" HorizontalOptions="Center"/>
 
         </StackLayout>
     </ContentPage.Content>

@@ -4,23 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_Mimica.View.Jogo">
+             x:Class="App1_Mimica.View.Jogo"
+             Padding="10">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="NomeGrupo" Text="Grupo 1" />
-            <Frame BackgroundColor="AliceBlue" HasShadow="True" CornerRadius="10">
-                <StackLayout Spacing="30">
-                    <Label x:Name="PalavraPontuacao" Text="Palavra - Pontuação 5" FontAttributes="Bold" HorizontalOptions="Center"/>
-                    <Label x:Name="Palavra" Text="**********" FontSize="24" FontAttributes="Bold"/>
-                    <Button Clicked="Mostrar_Button_Clicked" Text="Mostrar" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal">
+            <Label Text="{Binding Grupo.Nome}" HorizontalOptions="Start" FontSize="30" FontAttributes="Bold" />
+                <Label Text="{Binding Path=RodadaAtual, StringFormat='Rodada {0}'}" HorizontalOptions="EndAndExpand" FontSize="30" FontAttributes="Bold" />
+            </StackLayout>
+
+            <Frame BackgroundColor="LightBlue" HasShadow="True" CornerRadius="10" VerticalOptions="FillAndExpand">
+                <StackLayout Spacing="30" VerticalOptions="CenterAndExpand">
+                    <Label x:Name="PalavraPontuacao" Text="{Binding Path=PalavraPontuacao, StringFormat='A palavra que vale {0} pontos é:'}" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Label x:Name="Palavra" Text="{Binding Palavra}" FontSize="48" FontAttributes="Bold" HorizontalOptions="Center"/>
+                    <Button x:Name="BtnMostrarIniciar" Command="{Binding BtnMostrarIniciar}" CommandParameter="{x:Reference BtnMostrarIniciar}" Text="Mostrar" HorizontalOptions="Center" VerticalOptions="End" />
                 </StackLayout>
             </Frame>
-            <StackLayout x:Name="StackContagem" IsVisible="False">
-                <Label x:Name="Contagem" Text="120" FontSize="48" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,50,0,0"/>
+            
+            <StackLayout x:Name="StackContagem" IsVisible="{Binding ContagemVisible}" VerticalOptions="FillAndExpand">
+                <Label x:Name="Contagem" Text="{Binding Contagem}" FontSize="60" HorizontalOptions="Center" FontAttributes="Bold" Margin="0,50,0,0"/>
                 <Label Text="seg" HorizontalOptions="Center"/>
-                <StackLayout Orientation="Horizontal" Margin="20,50,20,0">
-                    <Button Clicked="Acertou_Button_Clicked" Text="Acertou" TextColor="White" BackgroundColor="Green" HorizontalOptions="Start"/>
-                    <Button Clicked="Errou_Button_Clicked" Text="Errou" TextColor="White" BackgroundColor="Red" HorizontalOptions="End"/>
+                <StackLayout Orientation="Horizontal" Margin="20,50,20,0" HorizontalOptions="Center" Spacing="30">
+                    <Button Command="{Binding BtnAcertou}" Text="Acertou" TextColor="White" BackgroundColor="Green" HorizontalOptions="Start" WidthRequest="100"/>
+                    <Button Command="{Binding BtnErrou}" Text="Errou" TextColor="White" BackgroundColor="Red" HorizontalOptions="End" WidthRequest="100"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>
