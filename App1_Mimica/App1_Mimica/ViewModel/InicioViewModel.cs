@@ -17,7 +17,6 @@ namespace App1_Mimica.ViewModel {
 
         }
         private void IniciarJogo() {
-
             Armazenamento.Armazenamento.Jogo = NovoJogo;
             App.Current.MainPage = new View.Jogo(NovoJogo.Grupo1, NovoJogo.RodadaAtual);
 

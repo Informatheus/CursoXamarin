@@ -7,5 +7,13 @@
              x:Class="App1_Mimica.App">
     <Application.Resources>
 
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#f78053"/>
+        </Style>
+        <Style TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="#faff7f"/>
+            <Setter Property="OutlineColor" Value="#f78053"/>
+        </Style>
+
     </Application.Resources>
 </Application>
