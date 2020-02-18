@@ -7,9 +7,11 @@
              x:Class="App1_NossoChat.App">
     <Application.Resources>
 
-        <Style TargetType="ContentPage">
+        <Style TargetType="{x:Type ContentPage}" ApplyToDerivedTypes="True">
             <Setter Property="Padding" Value="10" />
         </Style>
+
+        <Color x:Key="Verdeapp">#5ed055</Color>
 
     </Application.Resources>
 </Application>

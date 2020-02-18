@@ -4,12 +4,22 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.View.Chats">
+             x:Class="App1_NossoChat.View.Chats"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ScrollView>
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>                
+            </ScrollView>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App1_NossoChat.View.PaginaInicial"
-             BackgroundColor="#5ed055"
-             Padding="10">
+             BackgroundColor="{StaticResource Key=Verdeapp}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="NossoChat" TextColor="White" FontAttributes="Bold"/>

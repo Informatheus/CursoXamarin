@@ -7,9 +7,23 @@
              x:Class="App1_NossoChat.View.Mensagens">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <ScrollView>
+                    <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Button Text="Enviar" VerticalOptions="Center"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

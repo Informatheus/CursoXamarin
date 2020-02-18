@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace App1_NossoChat.ViewModel {
-    class PaginaInicialVM {
+    public class PaginaInicialVM {
+
+
     }
 }
