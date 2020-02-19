@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Text;
 
 namespace App1_NossoChat.ViewModel {
-    public class PaginaInicialVM {
+    public class PaginaInicialVM : BaseViewModel {
 
 
-    }
+
+
+	}
 }
