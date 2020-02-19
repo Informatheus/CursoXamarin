@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace App1_NossoChat.ViewModel {
-    class CadastrarChatVM {
-    }
+    class CadastrarChatVM : BaseViewModel {
+
+
+
+
+
+	}
 }
