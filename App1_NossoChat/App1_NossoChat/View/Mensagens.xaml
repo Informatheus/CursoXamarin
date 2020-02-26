@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <ScrollView>
+                <!--<ScrollView>-->
                     <ListView>
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -18,11 +18,11 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
-                </ScrollView>
+                <!--</ScrollView>-->
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Entry Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <Button Text="Enviar" VerticalOptions="Center"/>
+                <Button Text="Enviar" TextColor="White" VerticalOptions="Center" BackgroundColor="{StaticResource Verdeapp}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
