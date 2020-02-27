@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1_NossoChat.View {
+namespace App1_NossoChat.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Mensagens : ContentPage {
-        public Mensagens() {
+    public partial class CadastrarChatPage : ContentPage {
+        public CadastrarChatPage() {
             InitializeComponent();
         }
     }

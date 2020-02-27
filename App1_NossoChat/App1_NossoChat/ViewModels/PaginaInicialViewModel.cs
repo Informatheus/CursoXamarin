@@ -5,10 +5,10 @@ using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 using Newtonsoft.Json;
-using App1_NossoChat.View;
+using App1_NossoChat.Views;
 
-namespace App1_NossoChat.ViewModel {
-    public class PaginaInicialVM : BaseViewModel {
+namespace App1_NossoChat.ViewModels {
+    public class PaginaInicialViewModel : BaseViewModel {
 
 		private const string KeyLogin = "LOGIN";
 
@@ -26,7 +26,7 @@ namespace App1_NossoChat.ViewModel {
 
 		public Command AcessarCommand { get; set; }
 
-		public PaginaInicialVM(INavigation nav) : base (nav) {
+		public PaginaInicialViewModel() {
 			AcessarCommand = new Command(Acessar);
 
 		}
@@ -37,13 +37,11 @@ namespace App1_NossoChat.ViewModel {
 			user.password = Senha;
 
 			var usuarioLogado = ServicoChat.getUsuario(user);
-			if(user == null) {
-				Application.Current.MainPage.DisplayAlert("Erro", "Usuário/Senha não conferem", "OK");
+			if(usuarioLogado == null) {
+				DisplayAlert("Erro", "Usuário/Senha não conferem", "OK");
 			} else {
 				App.Current.Properties[KeyLogin] = JsonConvert.SerializeObject(user);
-				App.Current.MainPage = new NavigationPage(new Chats());
-
-				var res = App.Current.MainPage.DisplayAlert("teste", "teste", "OK", "Cancel");
+				PushAsync<ChatsViewModel>();
 			}
 
 		}

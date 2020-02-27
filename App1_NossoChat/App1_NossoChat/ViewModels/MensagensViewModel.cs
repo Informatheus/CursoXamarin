@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace App1_NossoChat.ViewModel {
-    class MensagensVM {
+namespace App1_NossoChat.ViewModels {
+    class MensagensViewModel {
     }
 }

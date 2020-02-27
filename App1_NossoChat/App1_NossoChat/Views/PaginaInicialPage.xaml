@@ -4,15 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.View.PaginaInicial"
+             x:Class="App1_NossoChat.Views.PaginaInicialPage"
              BackgroundColor="{StaticResource Key=Verdeapp}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="NossoChat" TextColor="White" FontAttributes="Bold"/>
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <Entry Text="{Binding nome}" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
-                <Entry Text="{Binding senha}" IsPassword="True" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
-                <Button Text="Entrar" Margin="0,20,10,0" HorizontalOptions="End" VerticalOptions="End" FontAttributes="Bold"/>
+                <Entry Text="{Binding Nome}" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
+                <Entry Text="{Binding Senha}" IsPassword="True" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
+                <Button Text="Entrar" Margin="0,20,10,0" HorizontalOptions="End" VerticalOptions="End" FontAttributes="Bold" Command="{Binding AcessarCommand}"/>
             </StackLayout>
             
         </StackLayout>

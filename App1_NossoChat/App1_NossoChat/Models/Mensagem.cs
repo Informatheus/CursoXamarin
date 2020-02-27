@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace App1_NossoChat.Model {
+namespace App1_NossoChat.Models {
     public class Mensagem {
 
         private int _id;

@@ -4,22 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.View.Chats"
+             x:Class="App1_NossoChat.Views.ChatsPage"
              >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="" />
+        <ToolbarItem IconImageSource="add.png"/>
+        <ToolbarItem IconImageSource="sort.png"/>
+        <ToolbarItem IconImageSource="refresh.png"/>        
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView>
-                <ListView>
+            <ListView ItemsSource="{Binding ListaChats}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>                
-            </ScrollView>            
+                </ListView>                         
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

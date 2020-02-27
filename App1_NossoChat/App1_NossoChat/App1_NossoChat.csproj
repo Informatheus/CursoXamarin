@@ -17,22 +17,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\Mensagens.xaml.cs">
-      <DependentUpon>Mensagens.xaml</DependentUpon>
+    <Compile Update="Views\CadastrarChatPage.xaml.cs">
+      <DependentUpon>CadastrarChatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ChatsPage.xaml.cs">
+      <DependentUpon>ChatsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MensagensPage.xaml.cs">
+      <DependentUpon>MensagensPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PaginaInicialPage.xaml.cs">
+      <DependentUpon>PaginaInicialPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\CadastrarChat.xaml">
+    <EmbeddedResource Update="Views\CadastrarChatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Chats.xaml">
+    <EmbeddedResource Update="Views\ChatsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Mensagens.xaml">
+    <EmbeddedResource Update="Views\MensagensPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\PaginaInicial.xaml">
+    <EmbeddedResource Update="Views\PaginaInicialPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

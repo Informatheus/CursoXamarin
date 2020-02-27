@@ -1,4 +1,4 @@
-﻿using App1_NossoChat.ViewModel;
+﻿using App1_NossoChat.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1_NossoChat.View {
+namespace App1_NossoChat.Views {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PaginaInicial : ContentPage {
-        public PaginaInicial() {
+    public partial class ChatsPage : ContentPage {
+        public ChatsPage() {
             InitializeComponent();
-
-            BindingContext = new PaginaInicialVM();
+            BindingContext = new ChatsViewModel();
         }
     }
 }

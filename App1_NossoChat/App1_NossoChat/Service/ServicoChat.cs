@@ -4,7 +4,7 @@ using System.Text;
 using System.Net;
 using System.Net.Http;
 using Newtonsoft.Json;
-using App1_NossoChat.Model;
+using App1_NossoChat.Models;
 
 namespace App1_NossoChat.Service {
     public class ServicoChat {
@@ -12,8 +12,6 @@ namespace App1_NossoChat.Service {
         const string url = "http://ws.spacedu.com.br/xf2018/rest/api/";
 
         public static Usuario getUsuario(Usuario usuario) {
-
-            //StringContent parametros = new StringContent(String.Format("?nome={0}&password={1}", usuario.nome, usuario.password));
 
             FormUrlEncodedContent parametros = new FormUrlEncodedContent(new[]{
             new KeyValuePair<string,string>("nome",usuario.nome),
@@ -24,7 +22,6 @@ namespace App1_NossoChat.Service {
             HttpResponseMessage resposta = requisicao.PostAsync(url + "usuario", parametros).GetAwaiter().GetResult();
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return JsonConvert.DeserializeObject<Usuario>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-                //TODO salvar login
             }
 
             return null;

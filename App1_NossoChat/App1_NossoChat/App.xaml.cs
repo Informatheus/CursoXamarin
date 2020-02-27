@@ -1,4 +1,4 @@
-﻿using App1_NossoChat.View;
+﻿using App1_NossoChat.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,7 +8,7 @@ namespace App1_NossoChat {
         public App() {
             InitializeComponent();
 
-            MainPage = new PaginaInicial();
+            MainPage = new PaginaInicialPage();
         }
 
         protected override void OnStart() {
