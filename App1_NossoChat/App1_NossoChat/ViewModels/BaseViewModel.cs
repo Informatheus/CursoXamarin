@@ -10,6 +10,12 @@ using Xamarin.Forms;
 namespace App1_NossoChat.ViewModels {
     public class BaseViewModel : INotifyPropertyChanged {
 
+        private Color color;
+        public Color BarBackgroundColor {
+            get => color;
+            set => SetProperty(ref color, value);
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public BaseViewModel() {
@@ -53,27 +59,20 @@ namespace App1_NossoChat.ViewModels {
 
             return Type.GetType(name);
         }
-       
+
         public async Task PushModalAsync<TViewModel>(params object[] args) where TViewModel : BaseViewModel {
             var viewType = GetTypeByViewModel<TViewModel>();
 
             try {
                 var page = Activator.CreateInstance(viewType, args) as Page;
 
-                INavigation navigation;
-
-                // se master detail ou navegação simples
+                // se master detail
                 if (Application.Current.MainPage is MasterDetailPage masterDetailPage) {
-                    navigation = masterDetailPage.Detail.Navigation;
-                } else {
-                    navigation = Application.Current.MainPage.Navigation;
+                    await masterDetailPage.Detail.Navigation.PushModalAsync(page);
                 }
-
-                // se navigationpage instanciada ou ainda não
-                if (navigation is NavigationPage) {
-                    await navigation.PushModalAsync(page);
-                } else {
-                    Application.Current.MainPage = new NavigationPage(page);
+                // se navegacao simples
+                else {
+                    await Application.Current.MainPage.Navigation.PushModalAsync(page);
                 }
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
@@ -86,20 +85,19 @@ namespace App1_NossoChat.ViewModels {
             try {
                 var page = Activator.CreateInstance(viewType, args) as Page;
 
-                INavigation navigation;
-
-                // se master detail ou navegação simples
+                // se master detail
                 if (Application.Current.MainPage is MasterDetailPage masterDetailPage) {
-                    navigation = masterDetailPage.Detail.Navigation;
-                } else {
-                    navigation = Application.Current.MainPage.Navigation;
+                    await masterDetailPage.Detail.Navigation.PushAsync(page);
                 }
-
-                // se navigationpage instanciada ou ainda não
-                if (navigation is NavigationPage) {
-                    await navigation.PushAsync(page);
-                } else {
-                    Application.Current.MainPage = new NavigationPage(page);
+                // se navegacao simples
+                else {
+                    // se a página já é uma Navigation
+                    if (Application.Current.MainPage is NavigationPage mainNavigation) {
+                        await mainNavigation.Navigation.PushAsync(page);
+                        // se não é, instancia uma nova Navigation
+                    } else {
+                        Application.Current.MainPage = new NavigationPage(page);
+                    }
                 }
             } catch (Exception ex) {
                 Debug.WriteLine(ex);

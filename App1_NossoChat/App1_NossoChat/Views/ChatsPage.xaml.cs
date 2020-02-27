@@ -15,5 +15,6 @@ namespace App1_NossoChat.Views {
             InitializeComponent();
             BindingContext = new ChatsViewModel();
         }
+
     }
 }

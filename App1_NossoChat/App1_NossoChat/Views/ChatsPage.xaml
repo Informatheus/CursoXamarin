@@ -7,21 +7,23 @@
              x:Class="App1_NossoChat.Views.ChatsPage"
              Title="Chats"
              >
+
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="add.png"/>
-        <ToolbarItem IconImageSource="sort.png"/>
-        <ToolbarItem IconImageSource="refresh.png"/>        
+        <ToolbarItem IconImageSource="add.png" Command="{Binding CommandAdicionar}"/>
+        <ToolbarItem IconImageSource="sort.png" Command="{Binding CommandOrdenar}"/>
+        <ToolbarItem IconImageSource="refresh.png" Command="{Binding CommandAtualizar}"/>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout>
             <ListView ItemsSource="{Binding ListaChats}">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>                         
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

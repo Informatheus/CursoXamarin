@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1_NossoChat.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace App1_NossoChat.Views {
     public partial class CadastrarChatPage : ContentPage {
         public CadastrarChatPage() {
             InitializeComponent();
+            BindingContext = new CadastrarChatViewModel();
         }
     }
 }

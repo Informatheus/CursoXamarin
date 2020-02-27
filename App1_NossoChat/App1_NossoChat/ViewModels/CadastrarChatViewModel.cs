@@ -7,10 +7,6 @@ namespace App1_NossoChat.ViewModels {
     class CadastrarChatViewModel : BaseViewModel {
 
 		public CadastrarChatViewModel() {
-
 		}
-
-
-
 	}
 }
