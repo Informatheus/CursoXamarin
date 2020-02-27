@@ -53,19 +53,27 @@ namespace App1_NossoChat.ViewModels {
 
             return Type.GetType(name);
         }
+       
         public async Task PushModalAsync<TViewModel>(params object[] args) where TViewModel : BaseViewModel {
             var viewType = GetTypeByViewModel<TViewModel>();
 
             try {
                 var page = Activator.CreateInstance(viewType, args) as Page;
 
-                // se master detail
+                INavigation navigation;
+
+                // se master detail ou navegação simples
                 if (Application.Current.MainPage is MasterDetailPage masterDetailPage) {
-                    await masterDetailPage.Detail.Navigation.PushModalAsync(page);
+                    navigation = masterDetailPage.Detail.Navigation;
+                } else {
+                    navigation = Application.Current.MainPage.Navigation;
                 }
-                // se navegacao simples
-                else {
-                    await Application.Current.MainPage.Navigation.PushModalAsync(page);
+
+                // se navigationpage instanciada ou ainda não
+                if (navigation is NavigationPage) {
+                    await navigation.PushModalAsync(page);
+                } else {
+                    Application.Current.MainPage = new NavigationPage(page);
                 }
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
@@ -78,22 +86,20 @@ namespace App1_NossoChat.ViewModels {
             try {
                 var page = Activator.CreateInstance(viewType, args) as Page;
 
-                // se master detail
+                INavigation navigation;
+
+                // se master detail ou navegação simples
                 if (Application.Current.MainPage is MasterDetailPage masterDetailPage) {
-                    await masterDetailPage.Detail.Navigation.PushAsync(page);
+                    navigation = masterDetailPage.Detail.Navigation;
+                } else {
+                    navigation = Application.Current.MainPage.Navigation;
                 }
-                // se navegacao simples
-                else {
 
-
-                    // O CÓDIGO ABAIXO ESTÁ MUITO PORCO E PRECISA SER ARRUMADO, SEU IMBECIL!
-
-                    // se há Navigation Instanciada
-                    if (Application.Current.MainPage.Navigation.NavigationStack.Count > 1) {
-                        await Application.Current.MainPage.Navigation.PushAsync(page);
-                    } else {
-                        Application.Current.MainPage = new NavigationPage(page);
-                    }
+                // se navigationpage instanciada ou ainda não
+                if (navigation is NavigationPage) {
+                    await navigation.PushAsync(page);
+                } else {
+                    Application.Current.MainPage = new NavigationPage(page);
                 }
             } catch (Exception ex) {
                 Debug.WriteLine(ex);
