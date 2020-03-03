@@ -20,11 +20,11 @@ namespace App1_NossoChat.ViewModels {
         private Chat _selectedChat;
         public Chat SelectedChat {
             get => _selectedChat;
-            set {
+             set {
                 SetProperty(ref _selectedChat, value);
 
                 if (value != null) {
-                    PushAsync<MensagensViewModel>(value);
+                    AbrirChat(value);
                 }
             }
         }
@@ -46,8 +46,12 @@ namespace App1_NossoChat.ViewModels {
             ListaChats = ListaChats.OrderBy(a => a.nome).ToList();
         }
 
-        private void ActionAdicionar(object obj) {
-            PushAsync<CadastrarChatViewModel>();
+        private async void ActionAdicionar(object obj) {
+            await PushAsync<CadastrarChatViewModel>();
+        }
+
+        private async void AbrirChat(Chat chat) {
+            await PushAsync<MensagensViewModel>(chat);
         }
 
     }

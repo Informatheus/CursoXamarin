@@ -28,14 +28,14 @@ namespace App1_NossoChat.ViewModels {
 
         }
 
-        private void Acessar(object obj) {
+        private async void Acessar(object obj) {
             var user = new Usuario();
             user.nome = Nome;
             user.password = Senha;
 
             var usuarioLogado = ServicoChat.getUsuario(user);
             if (usuarioLogado == null) {
-                DisplayAlert("Erro", "Usuário/Senha não conferem", "OK");
+                await DisplayAlert("Erro", "Usuário/Senha não conferem", "OK");
             } else {
                 App.Current.Properties[Usuario.KeyLogin] = usuarioLogado.GetJSON();
                 //PushAsync<ChatsViewModel>(); Não, porque precisamos da Navigation
