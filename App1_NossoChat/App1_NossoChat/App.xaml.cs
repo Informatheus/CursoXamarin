@@ -1,7 +1,5 @@
 ﻿using App1_NossoChat.Views;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace App1_NossoChat {
     public partial class App : Application {

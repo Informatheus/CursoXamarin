@@ -17,7 +17,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding ListaChats}">
+            <ListView ItemsSource="{Binding ListaChats}" SelectedItem="{Binding SelectedChat}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>

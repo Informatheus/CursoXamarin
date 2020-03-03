@@ -1,13 +1,11 @@
-﻿using System;
+﻿using App1_NossoChat.Models;
+using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
 using System.Net;
 using System.Net.Http;
-using Newtonsoft.Json;
-using App1_NossoChat.Models;
 
 namespace App1_NossoChat.Service {
-    public class ServicoChat {
+    public static class ServicoChat {
 
         const string url = "http://ws.spacedu.com.br/xf2018/rest/api/";
 
@@ -20,6 +18,7 @@ namespace App1_NossoChat.Service {
 
             HttpClient requisicao = new HttpClient();
             HttpResponseMessage resposta = requisicao.PostAsync(url + "usuario", parametros).GetAwaiter().GetResult();
+
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return JsonConvert.DeserializeObject<Usuario>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
             }
@@ -29,20 +28,20 @@ namespace App1_NossoChat.Service {
 
         public static List<Chat> getChats() {
 
+            List<Chat> lista = new List<Chat>();
+
             HttpClient requisicao = new HttpClient();
 
             HttpResponseMessage resposta = requisicao.GetAsync(url + "chats").GetAwaiter().GetResult();
+
             if (resposta.StatusCode == HttpStatusCode.OK) {
 
-                List<Chat> lista = JsonConvert.DeserializeObject<List<Chat>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
-
-                if (lista.Count > 0) {
-                    return lista;
-                }
+                lista = JsonConvert.DeserializeObject<List<Chat>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
 
             }
 
-            return null;
+            return lista;
+
         }
 
         public static bool insertChat(Chat chat) {
@@ -88,19 +87,18 @@ namespace App1_NossoChat.Service {
 
         public static List<Mensagem> getMensagens(Chat chat) {
 
+            List<Mensagem> lista = new List<Mensagem>();
+
             HttpClient requisicao = new HttpClient();
 
             HttpResponseMessage resposta = requisicao.GetAsync(url + "chat/" + chat.id + "/msg").GetAwaiter().GetResult();
             if (resposta.StatusCode == HttpStatusCode.OK) {
 
-                List<Mensagem> lista = JsonConvert.DeserializeObject<List<Mensagem>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                lista = JsonConvert.DeserializeObject<List<Mensagem>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
 
-                if (lista.Count > 0) {
-                    return lista;
-                }
             }
 
-            return null;
+            return lista;
         }
 
         public static bool insertMensagem(Mensagem mensagem) {
@@ -110,7 +108,7 @@ namespace App1_NossoChat.Service {
             new KeyValuePair<string,string>("id_chat",mensagem.id_chat.ToString()),
             new KeyValuePair<string,string>("id_usuario",mensagem.id_usuario.ToString()),
             new KeyValuePair<string,string>("mensagem",mensagem.mensagem)
-            }); ;
+            });
 
             HttpClient requisicao = new HttpClient();
             HttpResponseMessage resposta = requisicao.PostAsync(url + "chat/" + mensagem.id_chat + "/msg", parametros).GetAwaiter().GetResult();
@@ -120,7 +118,7 @@ namespace App1_NossoChat.Service {
 
             return false;
         }
-        
+
         public static bool deleteMensagem(Mensagem mensagem) {
 
             HttpClient requisicao = new HttpClient();

@@ -1,9 +1,4 @@
 ﻿using App1_NossoChat.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,5 +11,17 @@ namespace App1_NossoChat.Views {
             BindingContext = new ChatsViewModel();
         }
 
+        protected override void OnAppearing() {
+            base.OnAppearing();
+            (BindingContext as ChatsViewModel).ActionAtualizar(null);
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e) {
+
+        }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
+
+        }
     }
 }

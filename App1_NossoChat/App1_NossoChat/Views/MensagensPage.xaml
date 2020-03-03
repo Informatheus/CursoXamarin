@@ -5,24 +5,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="App1_NossoChat.Views.MensagensPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Atualizar" Command="{Binding AtualizarCommand}"/>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout>
-                <!--<ScrollView>-->
-                    <ListView>
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ViewCell>
-                                    
-                                </ViewCell>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                <!--</ScrollView>-->
-            </StackLayout>
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="MensagemContainer"/>
+            </ScrollView>
             <StackLayout Orientation="Horizontal">
-                <Entry Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
-                <Button Text="Enviar" TextColor="White" VerticalOptions="Center" BackgroundColor="{StaticResource Verdeapp}"/>
+                <Entry Text="{Binding TxtMsg}" Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                <Button Text="Enviar" TextColor="White" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="{StaticResource Verdeapp}" Command="{Binding BtnEnviar}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

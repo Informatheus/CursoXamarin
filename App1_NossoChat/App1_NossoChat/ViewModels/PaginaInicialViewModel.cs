@@ -1,16 +1,10 @@
-﻿using App1_NossoChat.Service;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using Xamarin.Forms;
-using Newtonsoft.Json;
+﻿using App1_NossoChat.Models;
+using App1_NossoChat.Service;
 using App1_NossoChat.Views;
+using Xamarin.Forms;
 
 namespace App1_NossoChat.ViewModels {
     public class PaginaInicialViewModel : BaseViewModel {
-
-        private const string KeyLogin = "LOGIN";
 
         private string _nome;
         public string Nome {
@@ -43,8 +37,8 @@ namespace App1_NossoChat.ViewModels {
             if (usuarioLogado == null) {
                 DisplayAlert("Erro", "Usuário/Senha não conferem", "OK");
             } else {
-                App.Current.Properties[KeyLogin] = JsonConvert.SerializeObject(user);
-                //PushAsync<ChatsViewModel>();
+                App.Current.Properties[Usuario.KeyLogin] = usuarioLogado.GetJSON();
+                //PushAsync<ChatsViewModel>(); Não, porque precisamos da Navigation
                 App.Current.MainPage = new NavigationPage(new ChatsPage()) {
                     BarBackgroundColor = (Color)App.Current.Resources["Verdeapp"], BarTextColor = Color.White };
             }

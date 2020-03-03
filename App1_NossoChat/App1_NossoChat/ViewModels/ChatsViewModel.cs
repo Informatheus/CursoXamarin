@@ -1,9 +1,7 @@
 ﻿using App1_NossoChat.Models;
 using App1_NossoChat.Service;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xamarin.Forms;
 
 namespace App1_NossoChat.ViewModels {
@@ -19,9 +17,20 @@ namespace App1_NossoChat.ViewModels {
             set => SetProperty(ref _listaChats, value);
         }
 
-        public ChatsViewModel() {
+        private Chat _selectedChat;
+        public Chat SelectedChat {
+            get => _selectedChat;
+            set {
+                SetProperty(ref _selectedChat, value);
 
-            ListaChats = ServicoChat.getChats();
+                if (value != null) {
+                    PushAsync<MensagensViewModel>(value);
+                }
+            }
+        }
+
+
+        public ChatsViewModel() {
 
             CommandAdicionar = new Command(ActionAdicionar);
             CommandOrdenar = new Command(ActionOrdenar);
@@ -29,7 +38,7 @@ namespace App1_NossoChat.ViewModels {
 
         }
 
-        private void ActionAtualizar(object obj) {
+        public void ActionAtualizar(object obj) {
             ListaChats = ServicoChat.getChats();
         }
 
