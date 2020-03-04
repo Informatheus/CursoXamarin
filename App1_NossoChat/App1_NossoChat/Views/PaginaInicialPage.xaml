@@ -7,14 +7,24 @@
              x:Class="App1_NossoChat.Views.PaginaInicialPage"
              BackgroundColor="{StaticResource Key=Verdeapp}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="NossoChat" TextColor="White" FontAttributes="Bold"/>
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <Entry Text="{Binding Nome}" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
-                <Entry Text="{Binding Senha}" IsPassword="True" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
-                <Button Text="Entrar" Margin="0,20,10,0" HorizontalOptions="End" VerticalOptions="End" FontAttributes="Bold" Command="{Binding AcessarCommand}"/>
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <Label Text="NossoChat" TextColor="White" FontAttributes="Bold"/>
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Entry Text="{Binding Nome}" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Senha}" IsPassword="True" Margin="10" WidthRequest="300" TextColor="#5ed055" FontAttributes="Bold"/>
+                    <Button Clicked="Button_Clicked" Text="Entrar/Cadastrar" TextColor="White" Margin="0,20,10,0"
+                            HorizontalOptions="End" VerticalOptions="End" FontAttributes="Bold" Command="{Binding AcessarCommand}"/>
+                </StackLayout>
             </StackLayout>
-            
-        </StackLayout>
+
+            <StackLayout BackgroundColor="#5ed055" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="False" x:Name="Carregando">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator Color="White" IsRunning="True"/>
+                    <Label Text="Carregando..." HorizontalOptions="CenterAndExpand" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

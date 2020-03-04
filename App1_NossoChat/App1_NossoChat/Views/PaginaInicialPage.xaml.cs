@@ -10,6 +10,12 @@ namespace App1_NossoChat.Views {
             InitializeComponent();
 
             BindingContext = new PaginaInicialViewModel();
+
+
+        }
+
+        private void Button_Clicked(object sender, System.EventArgs e) {
+            Carregando.IsVisible = true;
         }
     }
 }
