@@ -8,15 +8,15 @@
              xmlns:util="clr-namespace:App1_NossoChat.Models">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Atualizar" Command="{Binding AtualizarCommand}"/>
+        <ToolbarItem Text="Atualizar" Command="{Binding AtualizarCommand}" Order="Primary"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="minhasMensagensTemplate">
                 <ViewCell>
-                    <StackLayout Padding="10" Margin="10" BackgroundColor="#5ED055" HorizontalOptions="End">
-                        <Label Text="{Binding mensagem}" TextColor="White" />
+                    <StackLayout Padding="0" Margin="10">
+                        <Label Padding="10" Text="{Binding mensagem}" TextColor="White" BackgroundColor="#5ED055" HorizontalOptions="End" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
@@ -39,7 +39,8 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding ListaMensagens}" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemTemplate="{StaticResource MensagemTemplateSelector}">
+            <ListView ItemsSource="{Binding ListaMensagens}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      HasUnevenRows="True" ItemTemplate="{StaticResource MensagemTemplateSelector}">
             </ListView>
 
             <StackLayout Orientation="Horizontal">
