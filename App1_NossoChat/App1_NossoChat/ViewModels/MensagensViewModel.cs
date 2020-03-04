@@ -18,32 +18,26 @@ namespace App1_NossoChat.ViewModels {
         public Command AtualizarCommand { get; set; }
         public Command BtnEnviar { get; set; }
 
-        StackLayout Container { get; set; }
-
         private List<Mensagem> myListaMensagens;
         public List<Mensagem> ListaMensagens {
             get => myListaMensagens;
-            set {
-                SetProperty(ref myListaMensagens, value);
-                ShowOnScreen();
-            }
+            set => SetProperty(ref myListaMensagens, value);
         }
 
-        public MensagensViewModel(Chat chat, StackLayout MensagemContainer) {
+        public MensagensViewModel(Chat chat) {
 
-            Container = MensagemContainer;
             ListaMensagens = ServicoChat.getMensagens(chat);
             chatAtual = chat;
 
             BtnEnviar = new Command(EnviarAction);
             AtualizarCommand = new Command(AtualizarAction);
 
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-                AtualizarAction(null);
-                return true; });
+            //Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+            //    AtualizarAction();
+            //    return true; });
         }
 
-        private void AtualizarAction(object obj) {
+        private void AtualizarAction() {
             ListaMensagens = ServicoChat.getMensagens(chatAtual);
         }
 
@@ -56,51 +50,8 @@ namespace App1_NossoChat.ViewModels {
 
             ServicoChat.insertMensagem(NovaMsg);
             TxtMsg = "";
-            AtualizarAction(null);
+            AtualizarAction();
         }
 
-        private void ShowOnScreen() {
-            Container.Children.Clear();
-            Usuario usuarioLogado = new Usuario(App.Current.Properties[Usuario.KeyLogin] as string);
-            foreach (var msg in ListaMensagens) {
-                if (msg.usuario.id == usuarioLogado.id) {
-                    Container.Children.Add(CriarMensagemPropria(msg));
-                } else {
-                    Container.Children.Add(CriarMensagemOutroUsuario(msg));
-                }
-            }
-        }
-
-        private View CriarMensagemPropria(Mensagem mensagem) {
-            var layout = new StackLayout() {
-                Padding = 5, BackgroundColor = Color.FromHex("#5ED055"), HorizontalOptions = LayoutOptions.End
-            };
-            var label = new Label() {
-                TextColor = Color.White, Text = mensagem.mensagem
-            };
-            layout.Children.Add(label);
-            return layout;
-        }
-
-        private View CriarMensagemOutroUsuario(Mensagem mensagem) {
-            var labelNome = new Label() {
-                Text = mensagem.usuario.nome, FontSize = 10, TextColor = Color.FromHex("#5ED055")
-            };
-
-            var labelMsg = new Label() {
-                Text = mensagem.mensagem, TextColor = Color.FromHex("#5ED055")
-            };
-
-            var SL = new StackLayout();
-            SL.Children.Add(labelNome);
-            SL.Children.Add(labelMsg);
-
-            var frame = new Frame() {
-                BorderColor = Color.FromHex("#5ED055"), CornerRadius = 0, HorizontalOptions = LayoutOptions.StartAndExpand, Content = SL
-            };
-
-            return frame;
-
-        }
     }
 }

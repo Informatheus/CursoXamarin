@@ -4,17 +4,44 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.Views.MensagensPage">
+             x:Class="App1_NossoChat.Views.MensagensPage"
+             xmlns:util="clr-namespace:App1_NossoChat.Models">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Atualizar" Command="{Binding AtualizarCommand}"/>
     </ContentPage.ToolbarItems>
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="minhasMensagensTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10" Margin="10" BackgroundColor="#5ED055" HorizontalOptions="End">
+                        <Label Text="{Binding mensagem}" TextColor="White" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="mensagensOutrasPessoasTemplate">
+                <ViewCell>
+                    <Frame OutlineColor="#5ED055" CornerRadius="0" Padding="10" Margin="10" HorizontalOptions="Start">
+                        <StackLayout>
+                            <Label Text="{Binding usuario.nome}" FontSize="10" TextColor="#5ED055"/>
+                            <Label Text="{Binding mensagem}" TextColor="#5ED055"/>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+
+            <util:MensagemTemplateSelector x:Key="MensagemTemplateSelector"
+                OutraMensagem="{StaticResource mensagensOutrasPessoasTemplate}"
+                MinhaMensagem="{StaticResource minhasMensagensTemplate}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
-            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <StackLayout x:Name="MensagemContainer"/>
-            </ScrollView>
+            <ListView ItemsSource="{Binding ListaMensagens}" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemTemplate="{StaticResource MensagemTemplateSelector}">
+            </ListView>
+
             <StackLayout Orientation="Horizontal">
                 <Entry Text="{Binding TxtMsg}" Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 <Button Text="Enviar" TextColor="White" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="{StaticResource Verdeapp}" Command="{Binding BtnEnviar}"/>

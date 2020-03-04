@@ -12,7 +12,7 @@ namespace App1_NossoChat.Views {
 
             Title = chat.nome;
 
-            BindingContext = new MensagensViewModel(chat, MensagemContainer);
+            BindingContext = new MensagensViewModel(chat);
 
         }
     }

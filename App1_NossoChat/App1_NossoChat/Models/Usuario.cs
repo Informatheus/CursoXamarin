@@ -41,6 +41,9 @@ namespace App1_NossoChat.Models {
             return JsonConvert.SerializeObject(this);
         }
 
+        public static Usuario GetUsuarioLogado() {
+            return JsonConvert.DeserializeObject<Usuario>(App.Current.Properties[Usuario.KeyLogin] as string);
+        }
     }
 
 }
