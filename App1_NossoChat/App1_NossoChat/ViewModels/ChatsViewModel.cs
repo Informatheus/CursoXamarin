@@ -2,6 +2,7 @@
 using App1_NossoChat.Service;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace App1_NossoChat.ViewModels {
@@ -38,20 +39,22 @@ namespace App1_NossoChat.ViewModels {
 
         }
 
-        public void ActionAtualizar(object obj) {
-            ListaChats = ServicoChat.getChats();
+        public async void ActionAtualizar() {
+            IsBusy = true;
+            ListaChats = await ServicoChat.getChats();
+            IsBusy = false;
         }
 
-        private void ActionOrdenar(object obj) {
+        private void ActionOrdenar() {
             ListaChats = ListaChats.OrderBy(a => a.nome).ToList();
         }
 
-        private async void ActionAdicionar(object obj) {
-            await PushAsync<CadastrarChatViewModel>();
+        private async void ActionAdicionar() {
+            PushAsync<CadastrarChatViewModel>();
         }
 
         private async void AbrirChat(Chat chat) {
-            await PushAsync<MensagensViewModel>(chat);
+            PushAsync<MensagensViewModel>(chat);
         }
 
     }

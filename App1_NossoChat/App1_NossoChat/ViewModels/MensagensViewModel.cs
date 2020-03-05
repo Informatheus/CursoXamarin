@@ -26,19 +26,30 @@ namespace App1_NossoChat.ViewModels {
 
         public MensagensViewModel(Chat chat) {
 
-            ListaMensagens = ServicoChat.getMensagens(chat);
             chatAtual = chat;
+
+            AtualizarAction();
 
             BtnEnviar = new Command(EnviarAction);
             AtualizarCommand = new Command(AtualizarAction);
 
-            //Device.StartTimer(TimeSpan.FromSeconds(1), () => {
-            //    AtualizarAction();
-            //    return true; });
+            Device.StartTimer(TimeSpan.FromSeconds(3), () => {
+                AtualizarAction();
+                return true;
+            });
         }
 
-        private void AtualizarAction() {
-            ListaMensagens = ServicoChat.getMensagens(chatAtual);
+        private async void AtualizarAction() {
+            IsBusy = true;
+            CarregarNovasMensagens();
+            IsBusy = false;
+        }
+
+        private async void CarregarNovasMensagens() {
+            List<Mensagem> NovaLista = await ServicoChat.getMensagens(chatAtual);
+            if (ListaMensagens == null || ListaMensagens.Count != NovaLista.Count) {
+                ListaMensagens = NovaLista;
+            }
         }
 
         private void EnviarAction(object obj) {
@@ -50,7 +61,9 @@ namespace App1_NossoChat.ViewModels {
 
             ServicoChat.insertMensagem(NovaMsg);
             TxtMsg = "";
-            AtualizarAction();
+
+            //isso não é necessario se Device.Timer está on
+            //AtualizarAction(false);
         }
 
     }

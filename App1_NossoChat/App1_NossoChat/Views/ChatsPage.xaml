@@ -16,14 +16,30 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <ListView ItemsSource="{Binding ListaChats}" SelectedItem="{Binding SelectedChat}">
+
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+
+                <!-- CONTEÚDO VEM AQUI -->
+             <ListView ItemsSource="{Binding ListaChats}" SelectedItem="{Binding SelectedChat}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding nome}" TextColor="{StaticResource Key=Verdeapp}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+
+		</StackLayout>
+
+            <StackLayout BackgroundColor="#5ed055" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsBusy}" x:Name="Carregando">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator Color="White" IsRunning="True"/>
+                    <Label Text="Carregando..." HorizontalOptions="CenterAndExpand" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+        
+
     </ContentPage.Content>
 </ContentPage>

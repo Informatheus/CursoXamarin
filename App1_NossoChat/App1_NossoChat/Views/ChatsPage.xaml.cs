@@ -13,15 +13,7 @@ namespace App1_NossoChat.Views {
 
         protected override void OnAppearing() {
             base.OnAppearing();
-            (BindingContext as ChatsViewModel).ActionAtualizar(null);
-        }
-
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e) {
-
-        }
-
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e) {
-
+            (BindingContext as ChatsViewModel).ActionAtualizar();
         }
     }
 }

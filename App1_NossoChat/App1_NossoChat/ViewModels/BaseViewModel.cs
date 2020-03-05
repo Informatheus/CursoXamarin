@@ -10,10 +10,10 @@ using Xamarin.Forms;
 namespace App1_NossoChat.ViewModels {
     public class BaseViewModel : INotifyPropertyChanged {
 
-        private Color color;
-        public Color BarBackgroundColor {
-            get => color;
-            set => SetProperty(ref color, value);
+        private bool _isBusy;
+        public bool IsBusy {
+            get => _isBusy;
+            set => SetProperty(ref _isBusy, value);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

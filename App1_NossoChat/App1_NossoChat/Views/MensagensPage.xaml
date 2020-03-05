@@ -38,7 +38,12 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
+
+        <AbsoluteLayout>
+
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+
+                <!-- CONTEÚDO VEM AQUI -->
             <ListView ItemsSource="{Binding ListaMensagens}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                       HasUnevenRows="True" ItemTemplate="{StaticResource MensagemTemplateSelector}">
             </ListView>
@@ -47,6 +52,16 @@
                 <Entry Text="{Binding TxtMsg}" Placeholder="Mensagem" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 <Button Text="Enviar" TextColor="White" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="{StaticResource Verdeapp}" Command="{Binding BtnEnviar}"/>
             </StackLayout>
-        </StackLayout>
+
+		</StackLayout>
+
+            <StackLayout BackgroundColor="#5ed055" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsBusy}" x:Name="Carregando">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <ActivityIndicator Color="White" IsRunning="True"/>
+                    <Label Text="Carregando..." HorizontalOptions="CenterAndExpand" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

@@ -21,10 +21,10 @@ namespace App1_NossoChat.ViewModels {
 
         private async void CadastrarAction(object obj) {
             var chat = new Chat() { nome = Nome };
-            bool ok = ServicoChat.insertChat(chat);
+            bool ok = await ServicoChat.insertChat(chat);
 
             if (ok) {
-                await PopAsync();
+                PopAsync();
             } else {
                 Mensagem = "ERRO: Não foi possivel criar o novo chat";
             }

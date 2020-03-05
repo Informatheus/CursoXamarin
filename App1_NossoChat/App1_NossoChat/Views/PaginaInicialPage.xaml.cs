@@ -13,9 +13,5 @@ namespace App1_NossoChat.Views {
 
 
         }
-
-        private void Button_Clicked(object sender, System.EventArgs e) {
-            Carregando.IsVisible = true;
-        }
     }
 }

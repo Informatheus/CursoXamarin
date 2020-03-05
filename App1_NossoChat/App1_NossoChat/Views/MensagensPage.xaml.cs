@@ -15,5 +15,6 @@ namespace App1_NossoChat.Views {
             BindingContext = new MensagensViewModel(chat);
 
         }
+
     }
 }

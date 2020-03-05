@@ -3,13 +3,14 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace App1_NossoChat.Service {
     public static class ServicoChat {
 
         const string url = "http://ws.spacedu.com.br/xf2018/rest/api/";
 
-        public static Usuario getUsuario(Usuario usuario) {
+        public static async Task<Usuario> getUsuario(Usuario usuario) {
 
             FormUrlEncodedContent parametros = new FormUrlEncodedContent(new[]{
             new KeyValuePair<string,string>("nome",usuario.nome),
@@ -17,26 +18,26 @@ namespace App1_NossoChat.Service {
             });
 
             HttpClient requisicao = new HttpClient();
-            HttpResponseMessage resposta = requisicao.PostAsync(url + "usuario", parametros).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.PostAsync(url + "usuario", parametros);
 
             if (resposta.StatusCode == HttpStatusCode.OK) {
-                return JsonConvert.DeserializeObject<Usuario>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                return JsonConvert.DeserializeObject<Usuario>( await resposta.Content.ReadAsStringAsync());
             }
 
             return null;
         }
 
-        public static List<Chat> getChats() {
+        public static async Task<List<Chat>> getChats() {
 
             List<Chat> lista = new List<Chat>();
 
             HttpClient requisicao = new HttpClient();
 
-            HttpResponseMessage resposta = requisicao.GetAsync(url + "chats").GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.GetAsync(url + "chats");
 
             if (resposta.StatusCode == HttpStatusCode.OK) {
 
-                lista = JsonConvert.DeserializeObject<List<Chat>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                lista = JsonConvert.DeserializeObject<List<Chat>>( await resposta.Content.ReadAsStringAsync());
 
             }
 
@@ -44,14 +45,14 @@ namespace App1_NossoChat.Service {
 
         }
 
-        public static bool insertChat(Chat chat) {
+        public static async Task <bool> insertChat(Chat chat) {
 
             FormUrlEncodedContent parametros = new FormUrlEncodedContent(new[]{
             new KeyValuePair<string,string>("nome",chat.nome)
             });
 
             HttpClient requisicao = new HttpClient();
-            HttpResponseMessage resposta = requisicao.PostAsync(url + "chat", parametros).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.PostAsync(url + "chat", parametros);
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return true;
             }
@@ -59,13 +60,13 @@ namespace App1_NossoChat.Service {
             return false;
         }
 
-        public static bool updateChat(Chat chat) {
+        public static async Task<bool> updateChat(Chat chat) {
             FormUrlEncodedContent parametros = new FormUrlEncodedContent(new[]{
             new KeyValuePair<string,string>("nome",chat.nome)
             });
 
             HttpClient requisicao = new HttpClient();
-            HttpResponseMessage resposta = requisicao.PutAsync(url + "chat/" + chat.id, parametros).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.PutAsync(url + "chat/" + chat.id, parametros);
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return true;
             }
@@ -73,11 +74,11 @@ namespace App1_NossoChat.Service {
             return false;
         }
 
-        public static bool deleteChat(Chat chat) {
+        public static async Task<bool> deleteChat(Chat chat) {
 
             HttpClient requisicao = new HttpClient();
 
-            HttpResponseMessage resposta = requisicao.DeleteAsync(url + "chats/delete/" + chat.id).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.DeleteAsync(url + "chats/delete/" + chat.id);
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return true;
             }
@@ -85,23 +86,23 @@ namespace App1_NossoChat.Service {
             return false;
         }
 
-        public static List<Mensagem> getMensagens(Chat chat) {
+        public static async Task<List<Mensagem>> getMensagens(Chat chat) {
 
             List<Mensagem> lista = new List<Mensagem>();
 
             HttpClient requisicao = new HttpClient();
 
-            HttpResponseMessage resposta = requisicao.GetAsync(url + "chat/" + chat.id + "/msg").GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.GetAsync(url + "chat/" + chat.id + "/msg");
             if (resposta.StatusCode == HttpStatusCode.OK) {
 
-                lista = JsonConvert.DeserializeObject<List<Mensagem>>(resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult());
+                lista = JsonConvert.DeserializeObject<List<Mensagem>>( await resposta.Content.ReadAsStringAsync());
 
             }
 
             return lista;
         }
 
-        public static bool insertMensagem(Mensagem mensagem) {
+        public static async Task<bool> insertMensagem(Mensagem mensagem) {
 
 
             FormUrlEncodedContent parametros = new FormUrlEncodedContent(new[]{
@@ -111,7 +112,7 @@ namespace App1_NossoChat.Service {
             });
 
             HttpClient requisicao = new HttpClient();
-            HttpResponseMessage resposta = requisicao.PostAsync(url + "chat/" + mensagem.id_chat + "/msg", parametros).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.PostAsync(url + "chat/" + mensagem.id_chat + "/msg", parametros);
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return true;
             }
@@ -119,11 +120,11 @@ namespace App1_NossoChat.Service {
             return false;
         }
 
-        public static bool deleteMensagem(Mensagem mensagem) {
+        public static async Task<bool> deleteMensagem(Mensagem mensagem) {
 
             HttpClient requisicao = new HttpClient();
 
-            HttpResponseMessage resposta = requisicao.DeleteAsync(url + "chat/" + mensagem.id_chat + "/delete/" + mensagem.id).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = await requisicao.DeleteAsync(url + "chat/" + mensagem.id_chat + "/delete/" + mensagem.id);
             if (resposta.StatusCode == HttpStatusCode.OK) {
                 return true;
             }
